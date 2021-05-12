@@ -1,86 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Best Actor Election</title>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Verify Aadhaar</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.0/dist/web3.min.js"></script> 
+        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: 'AIzaSyAtg_DuUO5sO0yl3GQlYvEYM6oWjxuJTVM',
+  authDomain: '...',
+  databaseURL: '...',
+  projectId: 'evoting-225bb',
+  storageBucket: '...',
+  messagingSenderId: '...'
+          };
+          firebase.initializeApp(config);
+        </script>
+    </head>
+    <body class="gray-bg">
+        <div class="middle-box text-center loginscreen animated fadeInDown">
+            <div>
+                <div>
+                    <h1 class="logo-name"><img src="images/e-voting-logo.png" width="150"></h1>
+                </div>
+                <h3>Verify Aadhaar</h3>
+                <div class="m-t" id="verify_otp_model" role="form" action="#"  >
+                    <div class="form-group">
+                         <input onkeypress="return isNumberKey(event)" id="verify_otp" name="aadhaarno" class="form-control" placeholder="Enter OTP" required autofocus>
+                    </div>
+                   
+                    <button id="verifyotp" class="btn btn-primary block full-width m-b login">Verify OTP</button>
+                    
+                </div>
+                
+                <div class="m-t" id="enter_aadhaarno" role="form" action="#"  >
+                    <div class="form-group">
+                         <input onkeypress="return isNumberKey(event)" id="aadhaar_no" name="aadhaarno" class="form-control" placeholder="Aadhaar No" required autofocus>
+                    </div>
+                   
+                    <button id="getotp" class="btn btn-primary block full-width m-b login">Get OTP</button>
+                    
+                </div>
+                <br>
+                                <div id="errorbox" class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong id="error">Error!</strong>
+            </div>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styling.css" rel="stylesheet" type="text/css">
+            </div>
+        </div>  
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-      <main class="app">
-  <div class="boxes">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-          <div class="container" style="width: 900px;">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Best Actor Election</h1>
-          
-          <br/>
-        </div>
-      </div>
-
-      <div id="loader" class="row">
-        <p class="text-center">loading..</p>
-      </div>
-
-      <div id="content">
-        <table class="table" >
-          <thead>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Votes</th>
-          </thead>
-          <tbody id="contestantsResults" class="table-body">
-          </tbody>
-          
-          <p id="accountAddress" class="text-center"></p>
-        </table>
-
-        <form onSubmit="App.castVote(); return false;">
-          <div class="form-group">
-            <label for="contestantsSelect">Select Contestant</label>
-            <select class="select-control" id="contestantsSelect">
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary" id="submit">Cast your Vote</button>
-        </form>
-
-      </div>
-
-        </div>
-
-</main>
-        
-    
+<!--         <label for="recaptcha-invisible">
+                <input type="radio" id="recaptcha-invisible" name="recaptcha" value="invisible">
+                Invisible
+        </label> -->
 
 
 
+        <!-- <div class="footer">
+            <ul class="class   copy-right">
+                <div>
+                  <p align="center">Made with <i class="fa fa-heart" style="color:red;"></i> by Techdot</p>
+                </div>
+                
+               
+            </ul>
+            
+        </div> -->
+        <!-- Mainly scripts -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> 
 
+  <script type="text/javascript" src="js/login.js"></script>
+  
+    </body>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+  
 </html>

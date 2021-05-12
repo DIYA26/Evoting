@@ -2,6 +2,7 @@ App = {
   web3Provider: null,
   contracts: {},
   account: 0x0 ,
+  voted:false,
 
   init: function() {
     return App.initWeb3();
@@ -101,19 +102,27 @@ render: function() {
 
   castVote: function() {
     var contestantId = $('#contestantsSelect').val();
+    if(App.voted==true)
+    return;
     App.contracts.Contest.deployed().then(function(instance) {
       return instance.vote(contestantId, { from: App.account });
     }).then(function(result) {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
+      App.voted=true;
     }).catch(function(err) {
       console.error(err);
     });
   }
 
 };
-
+function handleLogout()
+{
+  window.localStorage.clear();
+  window.location.reload(true);
+  window.location.replace('/');
+};
 $(function() {
   $(window).load(function() {
     App.init();
