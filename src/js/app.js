@@ -111,6 +111,7 @@ render: function() {
       $("#content").hide();
       $("#loader").show();
       App.voted=true;
+       $("#submit").hide();
     }).catch(function(err) {
       console.error(err);
     });

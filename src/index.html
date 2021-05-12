@@ -25,12 +25,12 @@
         </script>
     </head>
     <body class="gray-bg">
-        <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div style="width: 400px;" class="middle-box text-center loginscreen animated fadeInDown">
             <div>
                 <div>
-                    <h1 class="logo-name"><img src="images/e-voting-logo.png" width="150"></h1>
+                    <h1 class="logo-name"><img src="images/EVoting.jpg" width="400"></h1>
                 </div>
-                <h3>Verify Aadhaar</h3>
+                <h3 id="enterAadhar">Enter your Aadhaar Number</h3>
                 <div class="m-t" id="verify_otp_model" role="form" action="#"  >
                     <div class="form-group">
                          <input onkeypress="return isNumberKey(event)" id="verify_otp" name="aadhaarno" class="form-control" placeholder="Enter OTP" required autofocus>
@@ -42,7 +42,7 @@
                 
                 <div class="m-t" id="enter_aadhaarno" role="form" action="#"  >
                     <div class="form-group">
-                         <input onkeypress="return isNumberKey(event)" id="aadhaar_no" name="aadhaarno" class="form-control" placeholder="Aadhaar No" required autofocus>
+                         <input onkeypress="return isNumberKey(event)" id="aadhaar_no" name="aadhaarno" class="form-control" placeholder="Aadhaar Number" required autofocus>
                     </div>
                    
                     <button id="getotp" class="btn btn-primary block full-width m-b login">Get OTP</button>

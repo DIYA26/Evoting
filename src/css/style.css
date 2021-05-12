@@ -6,6 +6,9 @@
  *   version 2.7.1
  *
 */
+#enterAadhar{
+    padding-top:20px
+}
 h1,
 h2,
 h3,
@@ -628,6 +631,8 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn-w-m {
   min-width: 140px;
 }
+
+
 .btn-primary.btn-outline {
   color: #1ab394;
 }
@@ -638,7 +643,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   color: #23c6c8;
 }
 .btn-warning.btn-outline {
-  color: #f8ac59;
+  color: rgb(6, 50, 247);
 }
 .btn-danger.btn-outline {
   color: #ed5565;
@@ -651,8 +656,8 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   color: #fff;
 }
 .btn-primary {
-  background-color: #c35323;
-  border-color:#c35323;
+  background-color:rgb(6, 50, 247);
+  border-color:rgb(6, 50, 247);
   color: #FFFFFF;
   width:50px;
 }
@@ -665,8 +670,8 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn-primary:active:hover,
 .btn-primary.active:hover,
 .btn-primary.active:focus {
-  background-color:  #c35323;
-  border-color:  #c35323;
+  background-color:  rgb(6,50,247);
+  border-color:rgb(6,50,247);
   color: #FFFFFF;
 }
 .btn-primary:active,
@@ -4688,7 +4693,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 /* ERROR & LOGIN & LOCKSCREEN*/
 .middle-box {
-  max-width: 400px;
+  max-width: 800px;
   z-index: 100;
   margin: 0 auto;
   padding-top: 40px;

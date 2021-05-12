@@ -36,8 +36,10 @@ $('#errorbox').hide()
   var aadhaar_no_phone_no = {
     "123412341234":"9270060576",
     "432143214321":"9403366997",
+    "123456789012":"9822006547",
   	"7382537xxxxx": "915801xxxx",
   	"300000000000": "7276xxxxxx",
+
 	"<replace your aadhaar no here>": "<your phone number>",
   }
 
