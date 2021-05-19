@@ -1,3 +1,17 @@
+window.onbeforeunload = function() { 
+    window.setTimeout(function () { 
+       
+        window.location.replace('/');
+    }, 0); 
+    window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser 
+}
+
+ var aadhaar_no_voting_status = {
+    "123412341234":false,
+    "432143214321":false,
+    "123456789012":false,
+  }
+var aadhar="";
 App = {
   web3Provider: null,
   contracts: {},
@@ -55,7 +69,7 @@ render: function() {
 
     loader.show();
     content.hide();
-
+   
     // Load account data
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
@@ -95,6 +109,7 @@ render: function() {
 
       loader.hide();
       content.show();
+     
     }).catch(function(error) {
       console.warn(error);
     });
@@ -104,13 +119,15 @@ render: function() {
     var contestantId = $('#contestantsSelect').val();
     if(App.voted==true)
     return;
+    console.log("aadhar is "+aadhar);
     App.contracts.Contest.deployed().then(function(instance) {
-      return instance.vote(contestantId, { from: App.account });
+      return instance.vote(contestantId,aadhar, { from: App.account });
     }).then(function(result) {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
       App.voted=true;
+      aadhaar_no_voting_status[aadhar]==true;
        $("#submit").hide();
     }).catch(function(err) {
       console.error(err);
@@ -126,6 +143,14 @@ function handleLogout()
 };
 $(function() {
   $(window).load(function() {
+    
+       if(aadhaar_no_voting_status[aadhar]==true)
+    {
+      $("#submit").hide();
+      alert("Already voted")
+    }
+    aadhar=localStorage.getItem("aadhar")
+     console.log("your aadhar is "+aadhar);
     App.init();
   });
 });

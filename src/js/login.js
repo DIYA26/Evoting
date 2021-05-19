@@ -14,6 +14,7 @@ function isNumberKey(evt){
 // });
 
 // var recaptchaResponse = grecaptcha.getResponse(window.recaptchaWidgetId);
+var aadhar="";
 $('#verify_otp_model').hide()
 $('#errorbox').hide()
 
@@ -39,7 +40,7 @@ $('#errorbox').hide()
     "123456789012":"9822006547",
   	"7382537xxxxx": "915801xxxx",
   	"300000000000": "7276xxxxxx",
-
+    "111122223333":"7522911650",
 	"<replace your aadhaar no here>": "<your phone number>",
   }
 
@@ -48,6 +49,8 @@ $('#errorbox').hide()
     window.signingIn = true;
     $('#errorbox').hide();
    // updateSignInButtonUI();
+   aadhar=$('#aadhaar_no').val();
+    console.log("your aadhar is "+aadhar);
     var phoneNumber = "+91" + aadhaar_no_phone_no[$('#aadhaar_no').val()];
     //console.log(phoneNumber);
       var d = new Date();
@@ -94,6 +97,7 @@ $(verifyotp).click(function(){
         //login success
         console.log(user.uid);
         console.log("Moving")
+        localStorage.setItem("aadhar",aadhar);
     	window.location.href = 'election.html'
 
       }).catch(function (error) {
