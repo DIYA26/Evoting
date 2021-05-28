@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="refresh" content="0;url=index.html"> -->
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Best Actor Election</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/background.css" rel="stylesheet" type="text/css">
+    <link href="css/styling.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,36 +19,31 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body id="body">
-    <section class="wrapper1">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-    </section>
+  <body>
       <main class="app">
   <div class="boxes">
-    <!-- <ul>
+    <ul>
       <li></li>
       <li></li>
       <li></li>
       <li></li>
-    </ul> -->
+    </ul>
   </div>
           <div class="container" style="width: 900px;">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center" style="color: white; font-size: 4em; margin-top: 1em;">Best Actor Election</h1>
-
+          <h1 class="text-center">Best Actor Election</h1>
+          
           <br/>
         </div>
       </div>
 
       <div id="loader" class="row">
-        <p class="text-center" style="color: white; font-size: 1em">loading..</p>
+        <p class="text-center">loading..</p>
       </div>
 
       <div id="content">
-        <table class="table" style="color: white; border: 0px; font-size: 1.5em;">
+        <table class="table" >
           <thead>
             <th scope="col">#</th>
             <th scope="col">Name</th>
@@ -56,31 +51,30 @@
           </thead>
           <tbody id="contestantsResults" class="table-body">
           </tbody>
-
+          
           <p id="accountAddress" class="text-center"></p>
         </table>
 
         <form onSubmit="App.castVote(); return false;">
           <div class="form-group">
-            <label for="contestantsSelect" style="color: white; font-size: 1.5em; padding-right: 30px">Select Contestant</label>
-            <select class="select-control" id="contestantsSelect" style="font-size: 1.2em; padding: 7px;">
+            <label for="contestantsSelect">Select Contestant</label>
+            <select class="select-control" id="contestantsSelect">
             </select>
           </div>
-          <button id="cast-button" type="submit" class="btn btn-primary btn-grad" id="submit-btn" style="height: 50px; width: 150px; background-color #861657; background-image: linear-gradient(32deg, #861657 0%, #ffa69e 84%);border: 0px; border: 0px;">Cast your Vote</button>
+          <button type="submit" class="btn btn-primary" id="submit">Cast your Vote</button>
         </form>
 
       </div>
       <br>
-
-      <!-- <button className="button" onClick=handleLogout() style="height: 50px; width: 150px; background-color: maroon;">
+      
+      <Button className="button" onClick=handleLogout()>
        Logout
-     </button> -->
-     <button className="button" onClick=handleLogout() type="submit" class="btn btn-primary btn-grad" id="submit-btn" style="height: 50px; width: 150px; background-color #861657; background-image: linear-gradient(32deg, #861657 0%, #ffa69e 84%);border: 0px; border: 0px;">Logout</button>
+      </Button>
         </div>
 
 </main>
-
-
+        
+    
 
 
 

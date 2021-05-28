@@ -38,6 +38,7 @@ contract Contest {
     constructor() public {
 		addContestant("Tom");
 		addContestant("Jerry");
+		addContestant("Doraemon");
 	}
  
 	//add a function to add contestant
