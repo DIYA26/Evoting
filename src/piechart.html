@@ -1,36 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
+  <head>
+<title>
+ 
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
+<script type="text/javascript" src="js/piechart.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+</head>
 <body>
 
-<h1>My Web Page</h1>
+<h1>Election Results 2021</h1>
 
 <div id="piechart"></div>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 <script type="text/javascript">
+
 // Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+// google.charts.load('current', {'packages':['corechart']});
+// google.charts.setOnLoadCallback(drawChart);
 
 // Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Hours per Day'],
-  ['Work', 8],
-  ['Eat', 2],
-  ['TV', 4],
-  ['Gym', 2],
-  ['Sleep', 8]
-]);
+drawChart();
 
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Election Results', 'width':550, 'height':400};
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
 </script>
 
 </body>

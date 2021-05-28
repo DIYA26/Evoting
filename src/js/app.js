@@ -12,6 +12,7 @@ window.onbeforeunload = function() {
     "123456789012":false,
   }
 var aadhar="";
+   var Results=[];
 App = {
   web3Provider: null,
   contracts: {},
@@ -86,16 +87,17 @@ render: function() {
     }).then(function(contestantsCount) {
       var contestantsResults = $("#contestantsResults");
       contestantsResults.empty();
-
+      setTimeout(() => {  console.log("Waiting1!"); }, 500);
       var contestantsSelect = $('#contestantsSelect');
       contestantsSelect.empty();
-
+      setTimeout(() => {  console.log("Waiting2!"); }, 500);
       for (var i = 1; i <= contestantsCount; i++) {
         contestInstance.contestants(i).then(function(contestant) {
           var id = contestant[0];
           var name = contestant[1];
           var voteCount = contestant[2];
-
+          var person = {x:name,y:Number(voteCount)};
+          Results.push(person);
           // Render contestant Result
           var contestantTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
           contestantsResults.append(contestantTemplate);
@@ -106,6 +108,10 @@ render: function() {
 
         });
       }
+       setTimeout(() => {  console.log("Waiting3!"); }, 500);
+      console.log(Results);
+       setTimeout(() => {  console.log("Waiting4!"); }, 500);
+     drawChart();
 
       loader.hide();
       content.show();
@@ -154,3 +160,23 @@ $(function() {
     App.init();
   });
 });
+function drawChart() {
+  // var data = google.visualization.arrayToDataTable(
+  // Results);
+
+  // // Optional; add a title and set the width and height of the chart
+  // var options = {'title':'Election Results', 'width':550, 'height':400};
+
+  // // Display the chart inside the <div> element with id="piechart"
+  // var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  // chart.draw(data, options);
+  console.log("Results are "+Results);
+  JSC.Chart('piechart', {
+   type: 'horizontal column',
+   series: [
+      {
+         points:Results
+      }
+   ]
+});
+}

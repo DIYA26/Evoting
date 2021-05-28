@@ -41,6 +41,7 @@ $('#errorbox').hide()
   	"7382537xxxxx": "915801xxxx",
   	"300000000000": "7276xxxxxx",
     "111122223333":"7522911650",
+    "111111111111":"9822006547",
 	"<replace your aadhaar no here>": "<your phone number>",
   }
 
@@ -123,3 +124,10 @@ $(getotp).click(function(){
     	$('#errorbox').hide()
     }
 });
+
+function viewResults()
+{
+  window.localStorage.clear();
+  
+  window.location.replace('/piechart.html');
+};
